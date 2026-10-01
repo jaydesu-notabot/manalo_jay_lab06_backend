@@ -8,6 +8,26 @@ JWT tokens.
 The API health check is available at `GET /api` and returns a JSON status
 response when the backend is running.
 
+## Deploy on Render
+
+Create a **Web Service** from this repository and choose **Docker**. Render
+will build the included `Dockerfile`; the container listens on Render's
+`PORT` automatically.
+
+Add these environment variables in Render:
+
+- `APP_ENV=production`
+- `DB_DRIVER=mysql`
+- `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
+- `DB_CHARSET=utf8mb4`
+- `JWT_SECRET` with at least 32 random characters
+- `REFRESH_TOKEN_KEY` with at least 32 random characters
+- `ALLOW_ORIGIN` set to the deployed frontend URL
+
+Use an external MySQL-compatible database such as Aiven for the database
+variables. Do not upload `.env` or place database credentials in the
+repository.
+
 The API health check is available at `GET /api` and returns a JSON status
 response when the backend is running.
 
