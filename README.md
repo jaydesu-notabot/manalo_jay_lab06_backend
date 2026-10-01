@@ -1,5 +1,16 @@
 # LavaLust Framework
 
+The product management API includes `POST /api/auth/register` for creating
+user accounts. It accepts `username`, `email`, and `password`. After successful
+registration, the user must log in through `POST /api/auth/login` to receive
+JWT tokens.
+
+The API health check is available at `GET /api` and returns a JSON status
+response when the backend is running.
+
+The API health check is available at `GET /api` and returns a JSON status
+response when the backend is running.
+
 > A lightweight, fast PHP framework built for developers who want clean MVC architecture without unnecessary complexity or performance overhead.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
